@@ -1,0 +1,30 @@
+# Archivos de datos grandes
+data/dump/
+data/*.bson
+data/*.zip
+
+# Dependencias de Node.js
+node_modules/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de build
+dist/
+build/ 
