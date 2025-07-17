@@ -1,0 +1,15 @@
+{
+  "name": "actividad-grupal-bdd",
+  "version": "1.0.0",
+  "description": "Actividad Grupal - Uso avanzado de bases de datos NoSQL (MongoDB y Neo4J)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0",
+    "neo4j-driver": "^5.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+} 
