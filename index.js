@@ -323,12 +323,43 @@ async function migrarDatosANeo4j(collection) {
             console.log(`- ${r.get('local')} está ubicado en '${r.get('barrio')}' que pertenece al distrito '${r.get('distrito')}'`);
         });
 
-        console.log("🎯 Migración de datos a Neo4j completada.");
-    } catch (err) {
-        console.error("❌ Error migrando a Neo4j:", err);
-    } finally {
-        await session.close();
-    }
+                 console.log("🎯 Migración de datos a Neo4j completada.");
+         
+         // Mostrar instrucciones para visualizar el grafo
+         console.log("\n" + "=".repeat(80));
+         console.log("📊 INSTRUCCIONES PARA VISUALIZAR EL GRAFO EN NEO4J BROWSER");
+         console.log("=".repeat(80));
+         console.log("1. 🌐 Abrir Neo4j Browser en: http://localhost:7474");
+         console.log("2. 🔑 Iniciar sesión con credenciales:");
+         console.log("   - Usuario: neo4j");
+         console.log("   - Contraseña: Password (o la que hayas configurado)");
+         console.log("\n3. 🔍 Consultas útiles para visualizar:");
+         console.log("\n   📌 Ver todos los nodos y relaciones:");
+         console.log("   MATCH (n) RETURN n LIMIT 25");
+         console.log("\n   📌 Ver relaciones Local-Barrio-Distrito:");
+         console.log("   MATCH (l:Local)-[:UBICADO_EN]->(b:Barrio)-[:PERTENECE_A]->(d:Distrito)");
+         console.log("   RETURN l, b, d LIMIT 10");
+         console.log("\n   📌 Ver locales con sus terrazas:");
+         console.log("   MATCH (l:Local)-[:TIENE_TERRAZA]->(t:Terraza)");
+         console.log("   RETURN l.nombre, t.mesas, t.sillas LIMIT 10");
+         console.log("\n   📌 Análisis por distrito:");
+         console.log("   MATCH (d:Distrito)<-[:PERTENECE_A]-(b:Barrio)<-[:UBICADO_EN]-(l:Local)");
+         console.log("   RETURN d.nombre, COUNT(l) as total_locales");
+         console.log("   ORDER BY total_locales DESC");
+         console.log("\n   📌 Visualizar grafo completo:");
+         console.log("   MATCH (n)-[r]->(m) RETURN n, r, m");
+         console.log("\n4. 🎨 Tips para mejor visualización:");
+         console.log("   - Usar el botón 'Graph' para vista de grafo");
+         console.log("   - Hacer clic en nodos para expandir relaciones");
+         console.log("   - Usar zoom y arrastrar para navegar");
+         console.log("   - Cambiar colores en el panel de estilos");
+         console.log("=".repeat(80));
+         
+     } catch (err) {
+         console.error("❌ Error migrando a Neo4j:", err);
+     } finally {
+         await session.close();
+     }
 }
 
 // ====================================================================
