@@ -1,15 +1,24 @@
 {
-  "name": "actividad-grupal-bdd",
+  "name": "act_grupal_bdd",
   "version": "1.0.0",
-  "description": "Actividad Grupal - Uso avanzado de bases de datos NoSQL (MongoDB y Neo4J)",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "mongodb": "^6.0.0",
-    "neo4j-driver": "^5.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artemisaix/act_grupal_bdd.git"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
-} 
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artemisaix/act_grupal_bdd/issues"
+  },
+  "homepage": "https://github.com/artemisaix/act_grupal_bdd#readme",
+  "description": "",
+  "dependencies": {
+    "mongodb": "^6.17.0",
+    "neo4j-driver": "^5.28.1"
+  }
+}
