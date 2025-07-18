@@ -258,3 +258,6 @@ Si encuentras problemas:
 ---
 
 **EQUIPO MAYO 1B UNIR** 
+•	Diana Andrea Carballo Sarabia.
+•	Stephany Rosario Pineda Sauceda.
+•	Marvin Steven Torres Bone
