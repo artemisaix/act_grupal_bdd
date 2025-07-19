@@ -200,13 +200,13 @@ async function ejecutarActualizaciones(collection, db) {
 
     // =======================LITERAL 7=========================================================
     // 7. Inspeccionar locales ubicados en calle Alcalá
-    console.log("📋 7. Marcando para inspección locales en calle Alcalá...");
+    console.log("📋 7. Marcando para inspección locales en calle ALCALA...");
     await collection.updateMany(
-        { DESC_NOMBRE: { $regex: "ALCALÁ", $options: "i" } },
+        { "DESC_NOMBRE": "ALCALA" },
         { $set: { inspeccionar: true } }
     );
-    const alcala = await collection.find({ DESC_NOMBRE: { $regex: "ALCALÁ", $options: "i" } }).limit(1).toArray();
-    console.log("✅ Locales en calle Alcalá marcados para inspección:");
+    const alcala = await collection.find({ "DESC_NOMBRE": "ALCALA" }).limit(1).toArray();
+    console.log("✅ Locales en calle ALCALA marcados para inspección:");
     console.log(JSON.stringify(alcala, null, 2));
     console.log("\n" + "=".repeat(80) + "\n");
 
